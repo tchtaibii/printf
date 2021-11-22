@@ -6,13 +6,14 @@
 /*   By: tchtaibi <tchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 15:24:29 by tchtaibi          #+#    #+#             */
-/*   Updated: 2021/11/22 15:28:23 by tchtaibi         ###   ########.fr       */
+/*   Updated: 2021/11/22 16:08:33 by tchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
+	return (1);
 }

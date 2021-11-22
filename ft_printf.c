@@ -6,41 +6,46 @@
 /*   By: tchtaibi <tchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 04:19:11 by tchtaibi          #+#    #+#             */
-/*   Updated: 2021/11/22 15:41:37 by tchtaibi         ###   ########.fr       */
+/*   Updated: 2021/11/22 17:09:46 by tchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void ft_printcent(char c, va_list arguments)
+int ft_printcent(char c, va_list arguments)
 {
+    int i;
+
+    i = 0;
     if(c == 'c')
-        ft_putchar(va_arg(arguments, int));
+        i = ft_putchar(va_arg(arguments, int));
     if(c == 's')
-        ft_putstr(va_arg(arguments, char*));
+        i = ft_putstr(va_arg(arguments, char*));
     if(c == 'p')
     {
-        t_putstr("0x");
-        ft_printhexlow(va_arg(arguments,int));
+        i = ft_putstr("0x10");
+        i += ft_printhexlow(va_arg(arguments,int));
     }
     if(c == 'd' || c == 'i')
-        ft_putnbr(va_arg(arguments, int));
+        i = ft_putnbr(va_arg(arguments, int));
     if(c == 'u')
-    ft_putnbr((unsigned int) va_arg(arguments,unsigned int));
+        i = ft_putnbr_u((unsigned int) va_arg(arguments,unsigned int));
     if(c == 'x')
-        ft_printhexlow(va_arg(arguments,int));
+        i = ft_printhexlow(va_arg(arguments,int));
     if(c == 'X')
-        ft_printhexup(va_arg(arguments,int));
+        i = ft_printhexup(va_arg(arguments,int));
     if(c == '%')
-        ft_putchar('%');
+        i = ft_putchar('%');
+        return (i);
 }
+
 int ft_printf(const char *format, ...)
 {
     char *str;
+    int i;
     va_list arguments;
 
-    lenght = 0;
-	
+    i = 0;
     va_start ( arguments, format);
     str = (char *)format;
     while(*str)
@@ -48,12 +53,12 @@ int ft_printf(const char *format, ...)
         if(*str == '%')
         {
             str++;
-            ft_printcent(*str, arguments);
+            i += ft_printcent(*str, arguments);
         }
         else
-            ft_putchar(*str);
+            i += ft_putchar(*str);
         str++;
     }
     va_end (arguments);
-    return 0;
+    return i;
 }

@@ -1,11 +1,25 @@
+#include "ft_printf.h"
+
 int main()
 {
+    unsigned int u = 4294967295;
 	int i = 233 ;
-	char p[] = "";
-    ft_printf("%x",55);
-    printf("%d\n",ft_printf("x"));
-    printf("%d\n",printf("x"));
-    ft_printf("\n");
-    ft_printf("%p",55);
-    // printf("%c",'a');
+	void *p = "88888";
+    char c = 'a';
+    char *s = "taha";
+    int x = 88888;
+
+    int o;
+    int b;
+    
+    o = ft_printf("%x",x);
+    printf("\n");
+    b = printf("%x",x);
+
+    //o = ft_printf("okay taha %u shit %d %p %c %c %s %x\n",u,i,p,c,c,s,x);
+       //b = printf("okay taha %u shit %d %p %c %c %s %x\n",u,i,p,c,c,s,x);
+    printf("\n");
+    printf("%d\n",o);
+    
+    printf("%d\n",b);
 }

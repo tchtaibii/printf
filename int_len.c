@@ -1,30 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   int_len.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchtaibi <tchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/22 15:26:07 by tchtaibi          #+#    #+#             */
-/*   Updated: 2021/11/22 16:47:09 by tchtaibi         ###   ########.fr       */
+/*   Created: 2021/11/22 16:25:34 by tchtaibi          #+#    #+#             */
+/*   Updated: 2021/11/22 17:09:15 by tchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *s)
+int int_len(int nbr)
 {
-	int	i;
+    int i;
+    
+    i = 0;
+    if (nbr == 0)
+        return (1);
+    if (nbr < 0)
+    {
+        i++;
+        nbr *= -1;
+    }
+    while (nbr > 0)
+    {
+        nbr/=10;
+        i++;
+    }
+    return (i);
+}
 
-	if (s)
-	{
-		i = 0;
-		while (s[i])
-		{
-			write(1, &s[i], 1);
-			i++;
-		}
-		return (ft_strlen(s));
-	}
-	return (0);
+int int_u_len(unsigned int nbr)
+{
+    int i;
+    
+    i = 0;
+    if (nbr == 0)
+        return (1);
+    while (nbr > 0)
+    {
+        nbr/=10;
+        i++;
+    }
+    return (i);
 }
