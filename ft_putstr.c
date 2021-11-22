@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchtaibi <tchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 13:17:07 by tchtaibi          #+#    #+#             */
-/*   Updated: 2021/11/11 23:42:07 by tchtaibi         ###   ########.fr       */
+/*   Created: 2021/11/22 15:26:07 by tchtaibi          #+#    #+#             */
+/*   Updated: 2021/11/22 15:28:31 by tchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putstr(char *s)
 {
 	int	i;
 
@@ -21,7 +21,7 @@ void	ft_putstr_fd(char *s, int fd)
 		i = 0;
 		while (s[i])
 		{
-			write(fd, &s[i], 1);
+			write(1, &s[i], 1);
 			i++;
 		}
 	}

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchtaibi <tchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 13:13:10 by tchtaibi          #+#    #+#             */
-/*   Updated: 2021/11/16 21:13:57 by tchtaibi         ###   ########.fr       */
+/*   Created: 2021/11/22 15:24:29 by tchtaibi          #+#    #+#             */
+/*   Updated: 2021/11/22 15:28:23 by tchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putchar(char c)
 {
-	write(fd, &c, 1);
+	write(1, &c, 1);
 }
