@@ -6,7 +6,7 @@
 /*   By: tchtaibi <tchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 15:25:01 by tchtaibi          #+#    #+#             */
-/*   Updated: 2021/11/22 17:08:49 by tchtaibi         ###   ########.fr       */
+/*   Updated: 2021/11/23 09:17:19 by tchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	ft_putnbr(int n)
 {
 	unsigned int	nb;
-	unsigned tmp;
-	
+	int				tmp;
+
 	tmp = n;
 	if (n < 0)
 	{
@@ -37,8 +37,8 @@ int	ft_putnbr(int n)
 
 int	ft_putnbr_u(unsigned int nb)
 {
-	unsigned int tmp;
-	
+	unsigned int	tmp;
+
 	tmp = nb;
 	if (nb >= 10)
 	{

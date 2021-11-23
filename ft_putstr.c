@@ -6,7 +6,7 @@
 /*   By: tchtaibi <tchtaibi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 15:26:07 by tchtaibi          #+#    #+#             */
-/*   Updated: 2021/11/22 16:47:09 by tchtaibi         ###   ########.fr       */
+/*   Updated: 2021/11/23 08:55:24 by tchtaibi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_putstr(char *s)
 {
 	int	i;
 
+	if (!s)
+		return (ft_putstr("(null)"));
 	if (s)
 	{
 		i = 0;
@@ -24,7 +26,7 @@ int	ft_putstr(char *s)
 			write(1, &s[i], 1);
 			i++;
 		}
-		return (ft_strlen(s));
+		return (i);
 	}
 	return (0);
 }
