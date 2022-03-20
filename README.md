@@ -11,7 +11,7 @@ have hoped. At least it works!
 
 ## Compiling
 Make sure to edit the `Makefile` to point to
-[libft](https://github.com/pbondoer/42-libft). Run `make` to compile the
+[libft](https://github.com/tchtaibii/libft). Run `make` to compile the
 library. Use it like you would use the `printf` function:
 
 ```c
